@@ -162,3 +162,33 @@ mlx_lm.fuse \
 - 导出 GGUF 格式用于 Ollama：使用 `mlx_lm` 的转换工具
 
 ---
+
+### **8. 快捷脚本（推荐）**
+
+把常用操作封装到了 `scripts/`，并通过根目录 `package.json` 提供 npm 别名，无需每次手动敲一长串命令。
+
+```bash
+# 数据准备
+npm run gen                  # 默认 500 条 → data/train.jsonl
+npm run gen:count -- 800     # 自定义条数
+
+# 推理验证（直接走 mlx_lm.generate）
+npm run quick -- "AirPods Pro 2值得买吗"
+npm run compare -- "今天能发货吗"     # baseline / adapter / 融合 三方对照
+
+# 测试 workflow（一键起 mlx server + Mastra dev + 触发 workflow）
+npm run test                              # 跑全部 12 条
+npm run test:product                      # 按 category 过滤
+npm run test:order
+npm run test:aftersales
+npm run test:complaint
+
+# 单独启服务
+npm run mlx:serve                  # 基础 4bit 模型（带 adapter 时用）
+npm run mlx:serve-fused            # 融合后的 llm_high
+npm run mastra:dev                 # Mastra Studio UI (http://localhost:4111)
+```
+
+**前置**：项目根 `.venv` 已激活并装好 `mlx-lm[train]`；`llm-mastra/` 已 `pnpm install`。`npm run mlx:*` 会自动 `source .venv/bin/activate`。
+
+---

@@ -1,0 +1,11 @@
+llm
+llm_high
+.venv
+.claude
+node_modules
+
+.env
+
+.agents
+
+.DS_Store

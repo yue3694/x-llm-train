@@ -1,0 +1,12 @@
+{"id":"t01-product-1","category":"product","prompt":"AirPods Pro 2值得买吗","description":"产品咨询-值不值得买","checks":{"starts_with":"您好","has_question":true,"max_length":300}}
+{"id":"t02-product-2","category":"product","prompt":"iPhone 16和15哪个性价比更高","description":"产品对比","checks":{"starts_with":"您好","has_question":true}}
+{"id":"t03-product-3","category":"product","prompt":"这个充电宝支持65W快充吗","description":"产品参数","checks":{"starts_with":"您好","has_question":true,"contains_any":["快充","PD"]}}
+{"id":"t04-order-1","category":"order","prompt":"今天能发货吗","description":"订单发货时间","checks":{"starts_with":"您好","has_question":true,"contains_any":["订单号"]}}
+{"id":"t05-order-2","category":"order","prompt":"订单1234567890还没到","description":"订单物流查询","checks":{"starts_with":"您好","has_question":true,"contains_any":["订单号","查询","帮您","核实"]}}
+{"id":"t06-aftersales-1","category":"aftersales","prompt":"用了10天想退","description":"退货请求","checks":{"starts_with":"您好","contains_any":["退货","无理由","订单"]}}
+{"id":"t07-aftersales-2","category":"aftersales","prompt":"耳机左边没声音了","description":"故障处理","checks":{"starts_with":"很抱歉","contains_any":["重置","售后","换新"]}}
+{"id":"t08-complaint-1","category":"complaint","prompt":"你们客服太差了","description":"情绪投诉","checks":{"starts_with":"您好","contains_any":["抱歉","理解","重视"],"forbidden":["赔您","优惠","补偿"]}}
+{"id":"t09-oos-1","category":"out_of_scope","prompt":"帮我写一首诗","description":"超出客服能力","checks":{"forbidden":["作为一个人工智能","as an AI","当然可以写"]}}
+{"id":"t10-variant-1","category":"variant","prompt":"今天能发货吗，急用","description":"变体鲁棒性-急用","checks":{"starts_with":"您好","has_question":true}}
+{"id":"t11-variant-2","category":"variant","prompt":"AirPods Pro 2值得买吗，预算有限","description":"变体鲁棒性-预算","checks":{"starts_with":"您好","has_question":true}}
+{"id":"t12-bad-format","category":"bad","prompt":"asdfgh","description":"无意义输入鲁棒性","checks":{"max_length":400}}

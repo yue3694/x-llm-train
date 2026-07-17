@@ -1,0 +1,23 @@
+{
+  "name": "x-llm-train",
+  "version": "1.0.0",
+  "description": "Mac M5 Pro 24GB 本地 LoRA 微调产物与配套脚本",
+  "private": true,
+  "scripts": {
+    "gen": "python3 scripts/generate_training_data.py",
+    "gen:count": "python3 scripts/generate_training_data.py --count 800 --output data/train.jsonl",
+    "quick": "bash scripts/quick_inference.sh",
+    "compare": "bash scripts/compare_baseline.sh",
+    "test": "bash scripts/run_local_workflow.sh",
+    "test:product": "bash scripts/run_local_workflow.sh product",
+    "test:order": "bash scripts/run_local_workflow.sh order",
+    "test:aftersales": "bash scripts/run_local_workflow.sh aftersales",
+    "test:complaint": "bash scripts/run_local_workflow.sh complaint",
+    "mlx:serve": "bash -c 'source .venv/bin/activate && mlx_lm.server --model mlx-community/Qwen2.5-7B-Instruct-4bit --port 8080'",
+    "mlx:serve-fused": "bash -c 'source .venv/bin/activate && mlx_lm.server --model llm_high --port 8080'",
+    "mastra:dev": "cd llm-mastra && pnpm run dev"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}
